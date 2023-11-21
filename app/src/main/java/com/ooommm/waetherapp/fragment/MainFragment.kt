@@ -107,6 +107,7 @@ class MainFragment : Fragment() {
             DialogManager.locationSettingsDialog(requireContext(), object : DialogManager.Listener {
                 override fun onClick() {
                     startActivity(Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS))
+
                 }
             })
         }

@@ -11,14 +11,13 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:backgroundTint="@color/blue_Light"
         app:cardCornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,7 +42,7 @@
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/iv_weather"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="sunny" />
 
@@ -54,7 +53,6 @@
                 android:padding="8dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/tv_city"
                 app:layout_constraintStart_toStartOf="@id/tv_city"
                 app:layout_constraintTop_toBottomOf="@id/tv_current_temp"
@@ -65,10 +63,8 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:src="@drawable/ic_baseline_cloud_queue_24"
-                app:layout_constraintBottom_toTopOf="@+id/tv_current_temp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_city"
-                app:layout_constraintStart_toStartOf="@+id/tv_city"
-                app:layout_constraintTop_toBottomOf="@+id/tv_city" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_city"
@@ -89,7 +85,6 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="48sp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/tv_city"
                 app:layout_constraintStart_toStartOf="@id/tv_city"
                 app:layout_constraintTop_toBottomOf="@id/tv_city"
@@ -101,8 +96,8 @@
                 android:layout_height="48dp"
                 android:background="@null"
                 android:src="@drawable/ic_baseline_search_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_min_max" />
 
             <ImageButton
                 android:id="@+id/ib_sync"
@@ -111,8 +106,8 @@
                 android:background="@null"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_baseline_cloud_sync_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_min_max" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -123,11 +118,11 @@
         android:id="@+id/card_view_container"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="@+id/card_view">
+        app:layout_constraintEnd_toEndOf="@+id/card_view"
+        app:layout_constraintStart_toStartOf="@+id/card_view"
+        app:layout_constraintTop_toBottomOf="@+id/card_view">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
@@ -158,17 +153,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="2dp"
-        app:layout_constraintBottom_toBottomOf="@id/card_view"
-        app:layout_constraintEnd_toEndOf="@id/card_view_container"
-        app:layout_constraintStart_toStartOf="@id/card_view_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/card_view"
+        app:layout_constraintStart_toStartOf="@id/card_view"
         app:layout_constraintTop_toBottomOf="@id/card_view_container" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
